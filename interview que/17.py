@@ -45,19 +45,6 @@ print(len(x))
 print(len("rushi"))
 
 #encapsulation : warpping data(variable) & method (fucntion) into class and hiding the data from direct access to keep it safe.
-# class BankA:
-#     def __init__(self,bal):
-#         self.bal=bal   # private variavble
-#     def depo(self,amt):
-#         self.bal += amt    
-#     def showb(self):
-#         print("bal:", self.bal)
-# acc=BankA(1000)
-# acc.depo(500)
-# acc.showb()
-  
-
-
 class BanA:
     def __init__(self,bal):
         self.__bal=bal
@@ -80,3 +67,83 @@ class Bike(Vehicle):
         print("Bike started")
 b=Bike()
 b.start()
+
+#for loop- we know how many time to repeat it
+# while- don't know how many time to repeat it
+
+#inheritance:
+#single - child class access the properties of parent class
+#multiple- a class derived from more than one class
+#multilevel- base class and derived class also inheritated from new derived class
+#Hirarchical inheritance- more than one derived class crreated from single base class
+#hybrid inheritance- multiple type of inheritance
+
+#simgle
+class Parent():
+    def fun(func):
+        print("fun in p")
+class Child(Parent):
+    def fun2(self):
+        print("fucn in child class")
+obj=Child()
+obj.fun()
+obj.fun2()
+
+#multiple
+# class Father():
+#     def father(self):
+#         print(self.fname)
+# class Mother():
+#     def mother(self):
+#         print(self.mname)
+# class Son(Father,Mother):
+#     def parent(self):
+#         print(self.fname)
+#         print(self.mname)
+# obj=Son()
+# obj.fname="gajana"
+# obj.mname="sangita"
+# obj.parent()
+
+#Multilevel
+class Grandfather:
+    def __init__(self,gfname):
+        self.gfname=gfname
+
+class Father(Grandfather):
+    def __init__(self,fname ,gfname):
+        self.fname=fname
+        # Grandfather.__init__(self,gfname)
+        super().__init__(gfname)
+class Son(Father):
+    def __init__(self,sname,fname,gfname):
+        self.sname=sname
+        # Father.__init__(self,fname,gfname)
+        super().__init__(fname,gfname)
+
+
+    def pname(self):
+        print(self.gfname)
+        print(self.fname)
+        print(self.sname)
+obj=Son("Rushi","Gajanan","Tulshiram")
+# print(obj.gfname)
+obj.pname()
+
+#Hirerchical inheritance
+class Parent:
+    def fun1(self):
+        print("f in parent class")
+class Child1(Parent):
+    def fun2(self):
+        print("fun in child clss")
+class Child2(Parent):
+    def fun3(self):
+        print("fucn3 in child clss")
+obj1=Child1()
+obj2=Child2()
+
+obj1.fun1()
+obj1.fun2()
+obj2.fun1()
+obj2.fun3()
