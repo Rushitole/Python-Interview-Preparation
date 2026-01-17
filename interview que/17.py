@@ -1,43 +1,43 @@
-# #lambda -
-# x= lambda a,b:a*b
-# print(x(2,3))
+#lambda -
+x= lambda a,b:a*b
+print(x(2,3))
 
-# #break continue and pass
-# #use to exit loop permently when specific confition is met.
-# list=range(8)
-# for x in list:
-#     if(x==4):
-#         break
-# print(x)
-# #
-# #continue- use to tp oexit loop when specific condtion is met and continue with next iteration of loop
-# lst=range(10)
-# for i in lst:
-#     if i==8:
-#         continue
-# print(i)
+#break continue and pass
+#use to exit loop permently when specific confition is met.
+list=range(8)
+for x in list:
+    if(x==4):
+        break
+print(x)
+#
+#continue- use to tp oexit loop when specific condtion is met and continue with next iteration of loop
+lst=range(10)
+for i in lst:
+    if i==8:
+        continue
+print(i)
 
-# #pass- nop opration statemnet
+#pass- nop opration statemnet
 
-# #Iteratror- its an ojject that return a element one by one using iter
-# num=[12,3,4]
-# it=iter(num)
-# print(next(it))
-# print(next(it))
-# print(next(it))
+#Iteratror- its an ojject that return a element one by one using iter
+num=[12,3,4]
+it=iter(num)
+print(next(it))
+print(next(it))
+print(next(it))
 
-# #Genrator: its an easy way to create an iterator using yield.
-# def gen():
-#     yield 1
-#     yield 2
-# g=gen()
-# print(next(g))
+#Genrator: its an easy way to create an iterator using yield.
+def gen():
+    yield 1
+    yield 2
+g=gen()
+print(next(g))
 
-# def number():
-#     for i in range(1,4):
-#         yield i
-# for x in number():
-#     print(x)
+def number():
+    for i in range(1,4):
+        yield i
+for x in number():
+    print(x)
 
 #polymorphism:  the ability of mesage to disply in more than one form
 x=[1,2,3]
@@ -90,20 +90,20 @@ obj.fun()
 obj.fun2()
 
 #multiple
-# class Father():
-#     def father(self):
-#         print(self.fname)
-# class Mother():
-#     def mother(self):
-#         print(self.mname)
-# class Son(Father,Mother):
-#     def parent(self):
-#         print(self.fname)
-#         print(self.mname)
-# obj=Son()
-# obj.fname="gajana"
-# obj.mname="sangita"
-# obj.parent()
+class Father():
+    def father(self):
+        print(self.fname)
+class Mother():
+    def mother(self):
+        print(self.mname)
+class Son(Father,Mother):
+    def parent(self):
+        print(self.fname)
+        print(self.mname)
+obj=Son()
+obj.fname="gajana"
+obj.mname="sangita"
+obj.parent()
 
 #Multilevel
 class Grandfather:
@@ -143,7 +143,7 @@ class Child2(Parent):
 obj1=Child1()
 obj2=Child2()
 
-obj1.fun1()
-obj1.fun2()
-obj2.fun1()
-obj2.fun3()
+obj1.fun1()  #parent method
+obj1.fun2()  # child1 method
+obj2.fun1()  #prent method
+obj2.fun3()  #child 2 method
