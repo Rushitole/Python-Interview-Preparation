@@ -42,5 +42,3 @@ print(freq)
 
 
 
-
-de
